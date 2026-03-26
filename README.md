@@ -4,7 +4,7 @@ Code repository for the manuscript:
 
 **Clonal evolution and epigenetic memory of stem/progenitor cells in hepatocellular carcinoma: a single-cell transcriptomic study**
 
-Yikai Hu, Kunjiang Tan, Na Feng, Jing Li, Lu Chen, Yuxuan Lin, Hongyang Wang*, Yufei He*
+Yikai Hu *et al.*
 
 ## Overview
 
@@ -14,14 +14,12 @@ This repository contains the analysis code for integrating single-cell RNA-seq d
 ```
 ├── 01_data_processing/       # Cell Ranger, quality control, batch integration
 ├── 02_cell_annotation/        # Malignant cell identification, CSC/BP classification
-├── 03_RNA_velocity/           # scVelo, veloVI, Monocle3, scTour pseudotime
-├── 04_mutation_analysis/      # Monopogen SNV calling, mutational signatures, dN/dS
+├── 03_RNA_velocity/           # velocity,pseudotime
+├── 04_mutation_analysis/      # mutational signatures, dN/dS
 ├── 05_CNV_phylogenetics/      # CopyKAT, MEDALT, phylogenetic tree construction
 ├── 06_cell_of_origin/         # TCR-based cell-of-origin inference
-├── 07_epigenetic_analysis/    # EPIC-seq methylation, erosion rate, core imprint score
-├── 08_WGCNA/                  # Weighted gene co-expression network analysis
-├── 09_survival_analysis/      # Kaplan–Meier, Cox regression, timeROC
-├── 10_tissue_microarray/      # Multiplex immunofluorescence quantification
+├── 07_Transcriptomic/         # Transcriptomic analysis
+├── 08_epigenetic_analysis/    # EPIC-seq methylation, erosion rate, core imprint score
 └── utils/                     # Helper functions and shared utilities
 ```
 
