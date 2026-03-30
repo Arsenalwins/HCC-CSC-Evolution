@@ -1,12 +1,18 @@
-Clonal Evolution and Epigenetic Memory of Stem/Progenitor Cells in Hepatocellular Carcinoma
+# Clonal Evolution and Epigenetic Memory of Stem/Progenitor Cells in Hepatocellular Carcinoma
+
 This repository contains the analysis code for the manuscript:
 
-Clonal evolution and epigenetic memory of stem/progenitor cells in hepatocellular carcinoma
-YiKai Hu et al.
+> **Clonal evolution and epigenetic memory of stem/progenitor cells in hepatocellular carcinoma**
+>
+> YiKai Hu _et al._
 
-Overview
+## Overview
+
 We integrated single-cell transcriptomic data from 109 samples (44 patients; 410,608 cells) to construct a somatic mutation landscape at single-cell resolution (384,867 SNVs across 31,908 cells from 20 patients). Combined with epigenetic profiling, we traced the evolutionary trajectory from bipotent progenitors (BPs) to cancer stem cells (CSCs), and validated the model using EpCAM-enriched scRNA-seq from two additional patients. Dynamic methylation experiments revealed that ~78% of CSC-specific methylation alterations exhibit stable epigenetic memory.
-Repository Structure
+
+## Repository Structure
+
+```
 HCC_CSC_Evolution/
 ├── README.md
 └── code/
@@ -40,37 +46,60 @@ HCC_CSC_Evolution/
         ├── FigS2d.R             # Fig S2d
         ├── FigS3_S4.R           # Fig S3a, S4a–c
         └── FigS6_S7.R           # Fig S6, S7a–d
-Figure–Script Mapping
-FigureScriptDescriptionFig 1b–fFig1_Atlas/Fig1.pyscANVI integration, CytoTRACE2 KDE, AUCell heatmap, stacked violin, RNA velocityFig 2aFig2_Mutation/Fig2.RSingle-cell OncoPrint + dN/dS lollipopFig 2bFig2_Mutation/Fig2.RVariant classification distributionFig 2cFig2_Mutation/Fig2.RDe novo mutational signatures (NMF)Fig 2d–fFig2_Mutation/Fig2.RShared-site O/E mutation burden (LMM + Wilcoxon)Fig 3a–cFig3_CNV_COO/Fig3_cnv.pyCNV score paired comparisonsFig 3d,eFig3_CNV_COO/Fig3.RMEDALT evolutionary distanceFig 3f,gFig3_CNV_COO/Fig3.RCell-of-origin inference (TCR-based)Fig 4aFig4_MACS_Validation/Fig4.pyEpCAM-enriched RNA velocityFig 4cFig4_MACS_Validation/Fig4.py + Fig4c.RSNP-transcriptome pseudotimeFig 5a–jFig5_WGCNA_DNMT/Fig5.R + Fig5_WGCNA.pyWGCNA, DNMT regulatory chain, KM survivalFig 6b–kFig6_Methylation/Fig6.RMethylation entropy, ChromHMM, memory classification, AUCFig 7h–jFig7_TMA/Fig7.RMIF quantification and prognosisFig S1a–dSupplementary/FigS1.pyAtlas marker dotplot, NMF clustering, MP analysisFig S2a–hSupplementary/FigS2.py + FigS2d.RBP gating, velocity, scTour, Monocle3, CytoTRACE2Fig S3, S4Supplementary/FigS3_S4.RSNV lollipop, CNV phylogenetic treesFig S6, S7Supplementary/FigS6_S7.RGO enrichment, entropy pipeline, compartment, epigeneticsFig S8Fig7_TMA/Fig7.RAdjacent tissue IF and prognosis
+```
 
-Note: Fig 1a, 6a, 8 are schematic diagrams created manually. Fig 4b (CNV tree for MACS patients) uses the same pipeline as Fig S4 with patient-specific inputs. Fig 7a–g and S8a–g are microscopy images from multiplex immunofluorescence.
+## Figure–Script Mapping
 
-Software Dependencies
-Python
+| Figure | Script | Description |
+|--------|--------|-------------|
+| Fig 1b–f | `Fig1_Atlas/Fig1.py` | scANVI integration, CytoTRACE2 KDE, AUCell heatmap, stacked violin, RNA velocity |
+| Fig 2a | `Fig2_Mutation/Fig2.R` | Single-cell OncoPrint + dN/dS lollipop |
+| Fig 2b | `Fig2_Mutation/Fig2.R` | Variant classification distribution |
+| Fig 2c | `Fig2_Mutation/Fig2.R` | De novo mutational signatures (NMF) |
+| Fig 2d–f | `Fig2_Mutation/Fig2.R` | Shared-site O/E mutation burden (LMM + Wilcoxon) |
+| Fig 3a–c | `Fig3_CNV_COO/Fig3_cnv.py` | CNV score paired comparisons |
+| Fig 3d,e | `Fig3_CNV_COO/Fig3.R` | MEDALT evolutionary distance |
+| Fig 3f,g | `Fig3_CNV_COO/Fig3.R` | Cell-of-origin inference (TCR-based) |
+| Fig 4a | `Fig4_MACS_Validation/Fig4.py` | EpCAM-enriched RNA velocity |
+| Fig 4c | `Fig4_MACS_Validation/Fig4.py` + `Fig4c.R` | SNP-transcriptome pseudotime |
+| Fig 5a–j | `Fig5_WGCNA_DNMT/Fig5.R` + `Fig5_WGCNA.py` | WGCNA, DNMT regulatory chain, KM survival |
+| Fig 6b–k | `Fig6_Methylation/Fig6.R` | Methylation entropy, ChromHMM, memory classification, AUC |
+| Fig 7h–j | `Fig7_TMA/Fig7.R` | MIF quantification and prognosis |
+| Fig S1a–d | `Supplementary/FigS1.py` | Atlas marker dotplot, NMF clustering, MP analysis |
+| Fig S2a–h | `Supplementary/FigS2.py` + `FigS2d.R` | BP gating, velocity, scTour, Monocle3, CytoTRACE2 |
+| Fig S3, S4 | `Supplementary/FigS3_S4.R` | SNV lollipop, CNV phylogenetic trees |
+| Fig S6, S7 | `Supplementary/FigS6_S7.R` | GO enrichment, entropy pipeline, compartment, epigenetics |
+| Fig S8 | `Fig7_TMA/Fig7.R` | Adjacent tissue IF and prognosis |
 
-scanpy (≥1.10.3), scvi-tools (≥1.1.6), scvelo (≥0.3.3)
-sctour (≥1.0.0), velovi (≥0.3.1), cellrank
-numpy, pandas, scipy, scikit-learn, matplotlib, seaborn
+> **Note:** Fig 1a, 6a, 8 are schematic diagrams created manually. Fig 4b (CNV tree for MACS patients) uses the same pipeline as Fig S4 with patient-specific inputs. Fig 7a–g and S8a–g are microscopy images from multiplex immunofluorescence.
 
-R
+## Software Dependencies
 
-Seurat (≥5.1.0), monocle3 (≥1.4.26)
-ComplexHeatmap, MutationalPatterns, maftools
-survival, survminer, timeROC
-methylKit, clusterProfiler, fgsea
-lmerTest, data.table, ggplot2, ggpubr
-phangorn, ggtree, ape
-compartmap, GenomicRanges, rtracklayer
+### Python
+- scanpy (≥1.10.3), scvi-tools (≥1.1.6), scvelo (≥0.3.3)
+- sctour (≥1.0.0), velovi (≥0.3.1), cellrank
+- numpy, pandas, scipy, scikit-learn, matplotlib, seaborn
 
-Data Availability
+### R
+- Seurat (≥5.1.0), monocle3 (≥1.4.26)
+- ComplexHeatmap, MutationalPatterns, maftools
+- survival, survminer, timeROC
+- methylKit, clusterProfiler, fgsea
+- lmerTest, data.table, ggplot2, ggpubr
+- phangorn, ggtree, ape
+- compartmap, GenomicRanges, rtracklayer
 
-Public scRNA-seq: GSE149614, GSE156625, GSE282701, GSE242889 (GEO); SRP318499 (SRA)
-EpCAM-enriched data: deposited in GSA database
-TCGA-LIHC / ICGC LIRI-JP / GSE14520: downloaded via HCCDB
-CLCA WGS: Genome Sequence Archive (PRJCA002666)
+## Data Availability
 
-License
+- **Public scRNA-seq**: GSE149614, GSE156625, GSE282701, GSE242889 (GEO); SRP318499 (SRA)
+- **EpCAM-enriched data**: deposited in GSA database
+- **TCGA-LIHC / ICGC LIRI-JP / GSE14520**: downloaded via [HCCDB](http://lifeome.net/database/hccdb/home.html)
+- **CLCA WGS**: Genome Sequence Archive (PRJCA002666)
+
+## License
+
 This project is licensed under the MIT License.
-Contact
 
-Hu Yikai: huyikai2001@gmail.com
+## Contact
+
+- Hu Yikai: huyikai2001@gmail.com
