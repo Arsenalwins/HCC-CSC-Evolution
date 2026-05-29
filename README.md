@@ -1,8 +1,8 @@
-# Clonal Evolution and Epigenetic Memory of Stem/Progenitor Cells in Hepatocellular Carcinoma
+# Late-stage dedifferentiation and epigenetic memory of cancer stem cells in hepatocellular carcinoma
 
 This repository contains the analysis code for the manuscript:
 
-> **Clonal evolution and epigenetic memory of stem/progenitor cells in hepatocellular carcinoma**
+> **Late-stage dedifferentiation and epigenetic memory of cancer stem cells in hepatocellular carcinoma**
 >
 > YiKai Hu _et al._
 
